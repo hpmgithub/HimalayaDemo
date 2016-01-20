@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="album"
+            type="com.jash.himalayademo.entities.AlbumEntity"/>
+        <import type="android.net.Uri"/>
+        <import type="android.view.View"/>
+    </data>
+    <LinearLayout
+        android:visibility="@{ album != null ? View.VISIBLE : View.INVISIBLE }"
+        android:orientation="vertical"
+        android:onClick="@{ album.click }"
+        android:padding="5dp">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:viewAspectRatio="1"
+                app:placeholderImage="@mipmap/ic_launcher"
+                android:transitionName="@{ album.title }"
+                android:id="@+id/album_cover"
+                app:imageURI="@{ Uri.parse( album.coverLarge ?? `` )}"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:background="#88000000"
+                android:layout_gravity="bottom"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@android:color/white"
+                android:text="@{ album.title }"/>
+        </FrameLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="@{ album.trackTitle }"/>
+    </LinearLayout>
+</layout>

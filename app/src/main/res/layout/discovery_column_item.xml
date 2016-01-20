@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="column"
+            type="com.jash.himalayademo.entities.DiscoveryColumnEntity"/>
+    </data>
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:layout_marginBottom="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{ column.title }"/>
+        <include layout="@layout/discovery_item"
+            app:discovery="@{ column.list[0] }"/>
+        <include layout="@layout/discovery_item"
+            app:discovery="@{ column.list[1] }"/>
+        <include layout="@layout/discovery_item"
+            app:discovery="@{ column.list[2] }"/>
+        <include layout="@layout/discovery_item"
+            app:discovery="@{ column.list[3] }"/>
+
+    </LinearLayout>
+</layout>
