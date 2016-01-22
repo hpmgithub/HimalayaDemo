@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.jash.himalayademo.entities.Categories;
 import com.jash.himalayademo.entities.HomeEntity;
 
 import java.io.IOException;
@@ -24,6 +25,8 @@ public class NetworkUtil {
     public interface Service{
         @GET("/mobile/discovery/v1/recommends?channel=and-d11&device=android&includeActivity=false&includeSpecial=true&scale=2&version=4.3.44.2")
         Call<HomeEntity> getHome();
+        @GET("/mobile/discovery/v1/categories?device=android&picVersion=11&scale=2")
+        Call<Categories> getCategories();
     }
 
     private static Service service;

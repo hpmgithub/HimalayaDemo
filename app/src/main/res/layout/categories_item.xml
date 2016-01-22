@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="categories"
+            type="com.jash.himalayademo.entities.Categories"/>
+    </data>
+    <android.support.v7.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:layout_marginBottom="10dp"
+        app:rowCount="3"
+        app:columnCount="2">
+        <include layout="@layout/category_item"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            app:category="@{ categories.list[0] }"/>
+        <include layout="@layout/category_item"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            app:category="@{ categories.list[1] }"/>
+        <include layout="@layout/category_item"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            app:category="@{ categories.list[2] }"/>
+        <include layout="@layout/category_item"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            app:category="@{ categories.list[3] }"/>
+        <include layout="@layout/category_item"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            app:category="@{ categories.list[4] }"/>
+        <include layout="@layout/category_item"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            app:category="@{ categories.list[5] }"/>
+
+    </android.support.v7.widget.GridLayout>
+</layout>
