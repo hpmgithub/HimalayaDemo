@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="first"
+            type="com.jash.himalayademo.entities.CategoriesFirst"/>
+        <import type="android.net.Uri"/>
+    </data>
+    <android.support.v7.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:layout_marginBottom="10dp"
+        app:rowCount="2"
+        app:columnCount="4">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:padding="5dp"
+            app:layout_columnSpan="2"
+            app:layout_rowSpan="2"
+            app:layout_columnWeight="2"
+            app:layout_rowWeight="2"
+            app:viewAspectRatio="1"
+            app:imageURI="@{ Uri.parse( first.list[0].coverPath ?? `` ) }"/>
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:padding="5dp"
+            app:layout_columnSpan="1"
+            app:layout_rowSpan="1"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            app:viewAspectRatio="1"
+            app:imageURI="@{ Uri.parse( first.list[1].coverPath ?? `` ) }"/>
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:padding="5dp"
+            app:layout_columnSpan="1"
+            app:layout_rowSpan="1"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            app:viewAspectRatio="1"
+            app:imageURI="@{ Uri.parse( first.list[2].coverPath ?? `` ) }"/>
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:padding="5dp"
+            app:layout_columnSpan="1"
+            app:layout_rowSpan="1"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            app:viewAspectRatio="1"
+            app:imageURI="@{ Uri.parse( first.list[3].coverPath ?? `` ) }"/>
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:padding="5dp"
+            app:layout_columnSpan="1"
+            app:layout_rowSpan="1"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            app:viewAspectRatio="1"
+            app:imageURI="@{ Uri.parse( first.list[4].coverPath ?? `` ) }"/>
+
+    </android.support.v7.widget.GridLayout>
+</layout>
